@@ -1,0 +1,50 @@
+{
+  "name": "metawear",
+  "version": "1.0.0",
+  "author": "Laura Kassovic <laura@mbientlab.com>",
+  "license": "SEE LICENSE IN LICENSE",
+  "description": "Official JavaScript SDK for MetaWear",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbientlab/MetaWear-USB-JavaScript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mbientlab/MetaWear-USB-JavaScript/issues"
+  },
+  "keywords": [
+    "metawear",
+    "mbientlab",
+    "bluetooth",
+    "ble",
+    "sensors",
+    "wearable"
+  ],
+  "main": "./index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "homepage": "https://github.com/mbientlab/MetaWear-USB-JavaScript#readme",
+  "dependencies": {
+    "debug": "^2.6.8",
+    "enum": "^2.5.0",
+    "ffi": "git+https://github.com/mbientlab/node-ffi.git#feature/support_node10",
+    "noble-device": "^1.4.1",
+    "npm": "^7.20.2",
+    "ref": "^1.3.5",
+    "ref-array": "^1.2.0",
+    "ref-struct": "^1.1.0",
+    "serialport": "^9.1.0",
+    "url-exists": "^1.0.3",
+    "xpc-connection": "git://github.com/taoyuan/node-xpc-connection.git"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.5",
+    "mocha": "^8.2.1"
+  },
+  "scripts": {
+    "install": "make OPT_FLAGS=-Wno-strict-aliasing -C MetaWear-SDK-Cpp/ -j",
+    "uninstall": "make -C MetaWear-SDK-Cpp/ clean",
+    "pretest": "jshint *.js lib/. test/.",
+    "test": "mocha"
+  }
+}
